@@ -9,14 +9,13 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-plex-mono)", "monospace"], // Movido para cá
       },
-      extend: {
-        backgroundImage: {
-          "hero-image": "url('/background.png')",
-        },
-        fontFamily: {
-          mono: ["var(--font-plex-mono)", "monospace"],
-        },
+      backgroundImage: {
+        "hero-image": "url('/hero-image.jpg')", // Movido para cá
+      },
+      boxShadow: {
+        button: "0px 0px 68px 7px rgba(0, 0, 0, 0.4)",
       },
     },
   },

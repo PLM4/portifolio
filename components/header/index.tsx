@@ -11,13 +11,19 @@ const NAV_ITEMS = [
 
 export const Header = () => {
   return (
-    <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
-      <div className="container flex justify-between">
+    <header className="absolute top-0 w-full z-10 h-16 lg:h-24 flex items-center justify-center">
+      <div className="container flex justify-between items-center px-4 sm:px-6">
         <Link href="/">
-          <Image width={58} height={49} src="/logo.jpg" alt="Logo"></Image>
+          <Image
+            width={58}
+            height={49}
+            src="/logo.jpg"
+            alt="Logo"
+            className="w-10 h-8 lg:w-14 lg:h-12"
+          />
         </Link>
 
-        <nav className="flex items-center gap-4 sm:gap-10">
+        <nav className="flex items-center gap-3 sm:gap-6 lg:gap-10">
           {NAV_ITEMS.map((item) => (
             <NavItem {...item} key={item.label} />
           ))}
