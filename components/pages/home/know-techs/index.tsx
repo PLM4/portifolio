@@ -7,13 +7,12 @@ export const KnowTechs = () => {
     <section className="container py-16">
       <SectionTitle title="Tecnologias que conheço" subtitle="tecnologias" />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-6 mt-8">
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: 6 }).map((_, index) => (
           <KnownTech
             key={index}
             tech={{
               name: "ReactJS",
               icon: <TbBrandReact />,
-              startDate: "2023-02-01",
             }}
           />
         ))}

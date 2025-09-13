@@ -2,7 +2,6 @@ type KnownTechProps = {
   tech: {
     name: string;
     icon: React.ReactNode;
-    startDate: string;
   };
 };
 
