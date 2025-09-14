@@ -1,5 +1,8 @@
+import { TechBadge } from "@/components/tech-badge";
 import Image from "next/image";
+import Link from "next/link";
 import { FaRegLightbulb } from "react-icons/fa";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 export const ProjectCard = () => {
   return (
@@ -10,7 +13,7 @@ export const ProjectCard = () => {
           height={304}
           src="/selling-flowers.jpg"
           alt="Project Image"
-          className="object-cover rounded-lg"
+          className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full object-cover rounded-lg"
         />
       </div>
       <div className="">
@@ -23,6 +26,24 @@ export const ProjectCard = () => {
           consiste em um site de venda de flores, onde o usuário pode navegar
           pelos produtos, adicionar ao carrinho e finalizar a compra.
         </p>
+
+        <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[350px]">
+          <TechBadge name="Next.js" />
+          <TechBadge name="TailwindCSS" />
+          <TechBadge name="NodeJS" />
+          <TechBadge name="TypeScript" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="HTML" />
+          <TechBadge name="CSS" />
+        </div>
+
+        <Link
+          className="mt-4 lg:mt-4 flex sm:items-center sm:gap-5 sm:flex-row "
+          href="/projects/selling-flowers"
+        >
+          Ver projeto
+          <HiArrowNarrowRight />
+        </Link>
       </div>
     </div>
   );
