@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { TechBadge } from "@/components/tech-badge";
 
 export const ExperienceItem = () => {
   return (
-    <div className="grid grid-cols-[40ppx,1fr] md:gap-10 gap-4">
+    <div className="grid grid-cols-[40px,1fr] md:gap-10 gap-4">
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-gray-500 p-0.5">
           <Image
@@ -23,12 +24,27 @@ export const ExperienceItem = () => {
             href="https://www.google.com"
             target="_blank"
             className="text-lg font-medium text-gray-50 hover:text-blue-500 transition-colors"
-            rel="noopener noreferrer"
           >
             Google
           </a>
-          <h4 className="text-gray-400">Software Engineer</h4>
-          <span className="text-gray-500">Jan 2020 - Present · 4 yrs</span>
+          <h4 className="text-gray-300">Software Engineer</h4>
+          <span className="text-gray-500">Jan 2023 - O momento · 2 anos</span>
+          <p className="text-gray-400">
+            Trabalhei em projetos desafiadores, contribuindo para o
+            desenvolvimento de soluções inovadoras e aprimorando minhas
+            habilidades técnicas.
+          </p>
+        </div>
+        <p className="mt-6 text-gray-400 text-sm mb-3 font-semibold">
+          Competências
+        </p>
+        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w[350px] mb-8">
+          <TechBadge name="React" />
+          <TechBadge name="TypeScript" />
+          <TechBadge name="Node.js" />
+          <TechBadge name="React" />
+          <TechBadge name="TypeScript" />
+          <TechBadge name="Node.js" />
         </div>
       </div>
     </div>

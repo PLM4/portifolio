@@ -1,6 +1,7 @@
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "../components/header";
+import { ContactForm } from "@/components/contact-form";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${plexMono.variable} antialiased`}>
         <Header />
         {children}
+        <ContactForm />
       </body>
     </html>
   );
