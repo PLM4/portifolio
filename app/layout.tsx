@@ -1,8 +1,8 @@
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "../components/header";
-import { ContactForm } from "@/components/contact-form";
-import { Footer } from "@/components/footer";
+import { Header } from "./components/header";
+import { ContactForm } from "./components/contact-form";
+import { Footer } from "./components/footer";
 
 const inter = Inter({
   variable: "--font-inter",

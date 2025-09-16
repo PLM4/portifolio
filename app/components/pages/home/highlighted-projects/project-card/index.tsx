@@ -1,4 +1,4 @@
-import { TechBadge } from "@/components/tech-badge";
+import { TechBadge } from "../../../../tech-badge";
 import Image from "next/image";
 import Link from "next/link";
 import { FaRegLightbulb } from "react-icons/fa";

@@ -1,5 +1,5 @@
-import { HorizontalDivider } from "@/components/divider/horizontal";
-import { SectionTitle } from "@/components/section-title";
+import { HorizontalDivider } from "../../../divider/horizontal";
+import { SectionTitle } from "../../../section-title";
 import { ProjectCard } from "./project-card";
 import Link from "next/link";
 

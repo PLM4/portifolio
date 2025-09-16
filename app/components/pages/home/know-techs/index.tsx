@@ -1,4 +1,4 @@
-import { SectionTitle } from "@/components/section-title";
+import { SectionTitle } from "../../../section-title";
 import { KnownTech } from "./known-tech";
 import { TbBrandReact } from "react-icons/tb";
 

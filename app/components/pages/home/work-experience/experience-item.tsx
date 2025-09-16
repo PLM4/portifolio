@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TechBadge } from "@/components/tech-badge";
+import { TechBadge } from "../../../tech-badge";
 
 export const ExperienceItem = () => {
   return (

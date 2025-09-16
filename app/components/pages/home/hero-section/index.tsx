@@ -1,5 +1,5 @@
-import { Button } from "@/components/button";
-import { TechBadge } from "@/components/tech-badge";
+import { Button } from "../../../button";
+import { TechBadge } from "../../../tech-badge";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { TbBrandGithub, TbBrandGmail, TbBrandLinkedin } from "react-icons/tb";
@@ -70,6 +70,7 @@ export const HeroSection = () => {
             alt="Avatar"
             className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full object-cover"
             priority
+            unoptimized
           />
         </div>
       </div>
