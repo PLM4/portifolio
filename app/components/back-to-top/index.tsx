@@ -22,7 +22,7 @@ export const BackToTop = () => {
   }, [handleScroll]);
 
   return (
-    <div className="fixed bottom-4 right-4 z-2S0">
+    <div className="fixed bottom-4 right-4 z-20">
       {isVisible ? (
         <Button className="shadow-lg shadow-blue-400/20" onClick={scrollToTop}>
           <TbArrowNarrowUp size={18} />

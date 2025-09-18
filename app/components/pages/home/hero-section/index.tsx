@@ -9,6 +9,7 @@ import {
   TbBrandInstagram,
   TbBrandLinkedin,
 } from "react-icons/tb";
+import { HomePageInfo } from "../../../../types/page-info";
 
 const MOCK_CONTACTS = [
   { label: "GitHub", href: "https://github.com/PLM4", icon: <TbBrandGithub /> },
@@ -24,7 +25,10 @@ const MOCK_CONTACTS = [
   },
 ];
 
-export const HeroSection = () => {
+type HomeSectionProps = {
+  homeInfo: HomePageInfo;
+};
+export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
   const handleContactClick = () => {
     const contactSection = document.querySelector("#contact");
     if (contactSection) {
