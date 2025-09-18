@@ -11,7 +11,7 @@ export const ProjectCard = () => {
         <Image
           width={420}
           height={304}
-          src="/selling-flowers.jpg"
+          src="/images/selling-flowers.jpg"
           alt="Project Image"
           className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full object-cover rounded-lg"
         />

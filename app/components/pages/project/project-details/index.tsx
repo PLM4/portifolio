@@ -13,7 +13,7 @@ export const ProjectDetails = () => {
         className=" absolute inset-0 z-[-1] "
         style={{
           background:
-            "url(/hero-image.jpg) no-repeat center/cover, url(/selling-flowers.jpg) no-repeat center/cover",
+            "url(/images/hero-image.jpg) no-repeat center/cover, url(/images/selling-flowers.jpg) no-repeat center/cover",
         }}
       />
 

@@ -1,8 +1,14 @@
+"use client";
+
 import { Button } from "../../../button";
 import { TechBadge } from "../../../tech-badge";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { TbBrandGithub, TbBrandGmail, TbBrandLinkedin } from "react-icons/tb";
+import {
+  TbBrandGithub,
+  TbBrandInstagram,
+  TbBrandLinkedin,
+} from "react-icons/tb";
 
 const MOCK_CONTACTS = [
   { label: "GitHub", href: "https://github.com/PLM4", icon: <TbBrandGithub /> },
@@ -11,10 +17,21 @@ const MOCK_CONTACTS = [
     href: "https://www.linkedin.com/in/pedro-lucas-de-melo-moraes-5223662bb/",
     icon: <TbBrandLinkedin />,
   },
-  { label: "Gmail", href: "", icon: <TbBrandGmail /> },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/_plmm04",
+    icon: <TbBrandInstagram />,
+  },
 ];
 
 export const HeroSection = () => {
+  const handleContactClick = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="w-full min-h-screen lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex items-center pt-16 lg:pt-24">
       <div className="container flex flex-col-reverse lg:flex-row items-center lg:items-start gap-8 lg:gap-0 px-4 sm:px-6">
@@ -41,7 +58,10 @@ export const HeroSection = () => {
           </div>
 
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 lg:justify-start sm:flex-row flex-col">
-            <Button className="shadow-button text-sm lg:text-base">
+            <Button
+              className="shadow-button text-sm lg:text-base"
+              onClick={handleContactClick}
+            >
               Entre em contato
               <HiArrowNarrowRight size={18} />
             </Button>
@@ -53,7 +73,6 @@ export const HeroSection = () => {
                   key={`contact-${index}`}
                   target="_blank"
                   className="hover:text-gray-400 transition-colors"
-                  rel="noopener noreferrer"
                 >
                   {contact.icon}
                 </a>
@@ -66,10 +85,9 @@ export const HeroSection = () => {
           <Image
             width={420}
             height={404}
-            src="/avatar.jpg"
+            src="/images/avatar.jpg"
             alt="Avatar"
             className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full object-cover"
-            priority
             unoptimized
           />
         </div>

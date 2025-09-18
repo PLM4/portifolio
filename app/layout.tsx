@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "./components/header";
 import { ContactForm } from "./components/contact-form";
 import { Footer } from "./components/footer";
+import { BackToTop } from "./components/back-to-top";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ContactForm />
         <Footer />
       </body>
+      <BackToTop />
     </html>
   );
 }

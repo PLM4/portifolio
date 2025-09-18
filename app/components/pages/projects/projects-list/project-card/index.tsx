@@ -5,7 +5,7 @@ export const ProjectCard = () => {
     <div className="rounded-lg overflow-hidden h-[436px] flex flex-col bg-gray-800 border-2 border-gray-800 hover:border-blue-600 transition-all opacity-80 hover:opacity-100 group">
       <div className="w-full h-48 overflow-hidden">
         <Image
-          src="/selling-flowers.jpg"
+          src="/images/selling-flowers.jpg"
           alt="Thumbbnail project floristry"
           width={380}
           height={200}
