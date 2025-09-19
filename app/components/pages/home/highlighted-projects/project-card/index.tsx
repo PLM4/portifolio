@@ -1,8 +1,8 @@
 import { TechBadge } from "../../../../tech-badge";
 import Image from "next/image";
-import Link from "next/link";
 import { FaRegLightbulb } from "react-icons/fa";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { Link } from "@/app/components/link";
 
 export const ProjectCard = () => {
   return (
@@ -16,12 +16,13 @@ export const ProjectCard = () => {
           className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full object-cover rounded-lg"
         />
       </div>
+
       <div className="">
         <h3 className="text-lg flex items-center gap-3 text-gray-50 font-medium">
           <FaRegLightbulb className="w-5 h-5 " />
           Projeto de venda de flores
         </h3>
-        <p className="my-6 text-gray-200 text-sm">
+        <p className="my-6 text-gray-200 ">
           Projeto desenvolvido em ReactJS, TailwindCSS e NodeJS. O projeto
           consiste em um site de venda de flores, onde o usuário pode navegar
           pelos produtos, adicionar ao carrinho e finalizar a compra.
@@ -37,10 +38,7 @@ export const ProjectCard = () => {
           <TechBadge name="CSS" />
         </div>
 
-        <Link
-          className="mt-4 lg:mt-4 flex sm:items-center sm:gap-5 sm:flex-row "
-          href="/projects/selling-flowers"
-        >
+        <Link href="/projects/selling-flowers">
           Ver projeto
           <HiArrowNarrowRight />
         </Link>

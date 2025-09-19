@@ -1,7 +1,7 @@
 import { HorizontalDivider } from "../../../divider/horizontal";
 import { SectionTitle } from "../../../section-title";
 import { ProjectCard } from "./project-card";
-import Link from "next/link";
+import { Link } from "@/app/components/link";
 
 export const HighlightedProjects = () => {
   return (

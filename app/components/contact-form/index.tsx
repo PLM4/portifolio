@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { HiArrowNarrowRight } from "react-icons/hi";
 import { Button } from "../button";
 import { SectionTitle } from "../section-title";
 import { z } from "zod";
@@ -42,29 +41,24 @@ export const ContactForm = () => {
         >
           <input
             placeholder="Nome"
-            className="w-full h-16 bg-gray-800/80 rounded-lg placeholder:text-gray-400 text-gray-50 p-5 
-                         focus:outline-none border border-gray-700 focus:border-blue-500 
-                         transition-all duration-300 group-hover:border-gray-500"
+            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
             {...register("name")}
           />
           <input
             placeholder="E-mail"
             type="email"
-            className="w-full h-16 bg-gray-800/80 rounded-lg placeholder:text-gray-400 text-gray-50 p-5 
-                         focus:outline-none border border-gray-700 focus:border-blue-500 
-                         transition-all duration-300 group-hover:border-gray-500"
+            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
             {...register("email")}
           />
-          <input
+          <textarea
             placeholder="Mensagem"
-            className="resize-none h-[138px] w-full bg-gray-800/80 rounded-lg placeholder:text-transparent text-gray-50 pt-7 px-5 pb-5 focus:outline-none border border-gray-700 focus:border-blue-500 transition-all duration-300 group-hover:border-gray-500"
+            className="resize-none h-[138px] w-full bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
             {...register("message")}
             maxLength={500}
           />
 
           <Button className="h-max mx-auto mt-6 shadow-button">
             Enviar mensagem
-            <HiArrowNarrowRight size={18} />
           </Button>
         </form>
       </div>

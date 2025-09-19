@@ -3,7 +3,7 @@ import { SectionTitle } from "../../../section-title";
 import { Button } from "@/app/components/button";
 import { TbBrandGithub } from "react-icons/tb";
 import { FiGlobe } from "react-icons/fi";
-import { Link } from "@/app/components/Link";
+import { Link } from "@/app/components/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
 export const ProjectDetails = () => {
