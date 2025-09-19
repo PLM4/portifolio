@@ -4,26 +4,9 @@ import { Button } from "../../../button";
 import { TechBadge } from "../../../tech-badge";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import {
-  TbBrandGithub,
-  TbBrandInstagram,
-  TbBrandLinkedin,
-} from "react-icons/tb";
 import { HomePageInfo } from "../../../../types/page-info";
-
-const MOCK_CONTACTS = [
-  { label: "GitHub", href: "https://github.com/PLM4", icon: <TbBrandGithub /> },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/pedro-lucas-de-melo-moraes-5223662bb/",
-    icon: <TbBrandLinkedin />,
-  },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/_plmm04",
-    icon: <TbBrandInstagram />,
-  },
-];
+import { RichText } from "@/app/components/rich-text";
+import { CMSIcon } from "@/app/components/cms-icon";
 
 type HomeSectionProps = {
   homeInfo: HomePageInfo;
@@ -47,17 +30,13 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
             Pedro Lucas
           </h2>
 
-          <p className="my-5 text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed">
-            Olá, meu nome é Pedro Lucas, sou um desenvolvedor Full-Stack
-            apaixonado em aprender novas tecnologias. Atualmente estou no último
-            periodo de analise e desenvolvimento de sistemas no IFPB Campus
-            Esperança. Estou sempre em busca de novos desafios e oportunidades
-            para crescer profissionalmente.
-          </p>
+          <div className="my-5 text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed">
+            <RichText content={homeInfo.introduction.raw} />
+          </div>
 
           <div className="flex justify-center lg:justify-start gap-2 flex-wrap">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <TechBadge key={index} name="ReactJS" />
+            {homeInfo.technologies.map((tech) => (
+              <TechBadge name={tech.name} />
             ))}
           </div>
 
@@ -71,14 +50,14 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
             </Button>
 
             <div className="text-3xl text-white flex items-center gap-3 h-20">
-              {MOCK_CONTACTS.map((contact, index) => (
+              {homeInfo.socials.map((contact, index) => (
                 <a
-                  href={contact.href}
+                  href={contact.url}
                   key={`contact-${index}`}
                   target="_blank"
                   className="hover:text-gray-400 transition-colors"
                 >
-                  {contact.icon}
+                  <CMSIcon icon={contact.iconSvg} />
                 </a>
               ))}
             </div>
@@ -89,7 +68,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           <Image
             width={420}
             height={404}
-            src="/images/avatar.jpg"
+            src={homeInfo.profilePicture.url}
             alt="Avatar"
             className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full object-cover"
             unoptimized

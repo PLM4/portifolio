@@ -1,3 +1,4 @@
+import type { RichTextContent } from "@graphcms/rich-text-types";
 import { KnownTech } from "./knwon-tech";
 
 export type Social = {
@@ -7,7 +8,7 @@ export type Social = {
 
 export type HomePageInfo = {
   introduction: {
-    raw: string;
+    raw: RichTextContent;
   };
   technologies: KnownTech[];
   profilePicture: {
