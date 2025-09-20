@@ -35,8 +35,8 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           </div>
 
           <div className="flex justify-center lg:justify-start gap-2 flex-wrap">
-            {homeInfo.technologies.map((tech) => (
-              <TechBadge name={tech.name} />
+            {homeInfo.technologies.map((tech, index) => (
+              <TechBadge key={index} name={tech.name} />
             ))}
           </div>
 

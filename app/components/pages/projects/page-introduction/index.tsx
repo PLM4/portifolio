@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/app/components/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { SectionTitle } from "../../../section-title";
 

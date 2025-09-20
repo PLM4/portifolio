@@ -28,8 +28,8 @@ export default function RootLayout({
         {children}
         <ContactForm />
         <Footer />
+        <BackToTop />
       </body>
-      <BackToTop />
     </html>
   );
 }

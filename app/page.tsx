@@ -1,7 +1,7 @@
 import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
 import { HeroSection } from "./components/pages/home/hero-section";
 import { HighlightedProjects } from "./components/pages/home/highlighted-projects";
-import { KnowTechs } from "./components/pages/home/know-techs";
+import { KnownTechs } from "./components/pages/home/know-techs";
 import { WorkExperience } from "./components/pages/home/work-experience";
 import { HomePageData } from "./types/page-info";
 
@@ -39,7 +39,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection homeInfo={pageData} />
-      <KnowTechs />
+      <KnownTechs techs={pageData.knownTechs} />
       <HighlightedProjects />
       <WorkExperience />
     </>

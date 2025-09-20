@@ -1,21 +1,20 @@
-import { SectionTitle } from "../../../section-title";
-import { KnownTech } from "./known-tech";
-import { TbBrandReact } from "react-icons/tb";
+"use client";
 
-export const KnowTechs = () => {
+import { SectionTitle } from "@/app/components/section-title";
+import { KnownTech } from "./known-tech";
+import { KnownTech as IKnownTech } from "@/app/types/projects";
+
+type KnownTechsProps = {
+  techs: IKnownTech[];
+};
+
+export const KnownTechs = ({ techs }: KnownTechsProps) => {
   return (
     <section className="container py-16">
-      <SectionTitle title="Tecnologias que conheço" subtitle="tecnologias" />
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]">
-        {Array.from({ length: 8 }).map((_, index) => (
-          <KnownTech
-            key={index}
-            tech={{
-              name: "ReactJS",
-              icon: <TbBrandReact />,
-              startDate: "2020-01-01",
-            }}
-          />
+      <SectionTitle subtitle="competências" title="Conhecimentos" />
+      <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]">
+        {techs?.map((tech, i) => (
+          <KnownTech tech={tech} />
         ))}
       </div>
     </section>
