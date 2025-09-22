@@ -39,20 +39,36 @@ const getPageData = async (): Promise<HomePageData> => {
           }
         }
       }
+        workExperiences {
+        companyLogo {
+          url
+        }
+        role
+        companyName
+        companyUrl
+        startDate
+        endDate
+        description {
+          raw
+        }
+        technologies {
+          name
+        }
+      }
     }
   `;
-  return fetchHygraphQuery(query, 60 * 60 * 24); // 24 hours;
+  return fetchHygraphQuery(query, 0); // 24 hours;
 };
 
 export default async function Home() {
-  const { page: pageData } = await getPageData();
+  const { page: pageData, workExperiences } = await getPageData();
 
   return (
     <>
       <HeroSection homeInfo={pageData} />
       <KnownTechs techs={pageData.knownTechs} />
       <HighlightedProjects projects={pageData.highlightProjects} />
-      <WorkExperience />
+      <WorkExperience experiences={workExperiences} />
     </>
   );
 }
