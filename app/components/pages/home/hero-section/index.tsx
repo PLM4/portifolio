@@ -35,8 +35,8 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           </div>
 
           <div className="flex justify-center lg:justify-start gap-2 flex-wrap">
-            {homeInfo.technologies.map((tech, index) => (
-              <TechBadge key={index} name={tech.name} />
+            {homeInfo.technologies.map((tech) => (
+              <TechBadge key={tech.name} name={tech.name} />
             ))}
           </div>
 
@@ -71,6 +71,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
             src={homeInfo.profilePicture.url}
             alt="Avatar"
             className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full object-cover"
+            priority
             unoptimized
           />
         </div>
