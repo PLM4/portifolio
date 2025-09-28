@@ -6,6 +6,18 @@ import { Footer } from "./components/footer";
 import { BackToTop } from "./components/back-to-top";
 import { ReactNode } from "react";
 
+export const metadata = {
+  title: {
+    default: "Home",
+    template: "%s",
+  },
+  icons: [
+    {
+      url: "/images/logo.jpg",
+    },
+  ],
+};
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],

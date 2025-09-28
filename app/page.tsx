@@ -5,6 +5,10 @@ import { KnownTechs } from "./components/pages/home/known-techs";
 import { WorkExperience } from "./components/pages/home/work-experience";
 import { HomePageData } from "./types/page-info";
 
+export const metadata = {
+  title: "Home",
+};
+
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
     query PageInfoQuery {
