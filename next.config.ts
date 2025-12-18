@@ -1,8 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: import("next").NextConfig = {
   experimental: {},
   images: {
-    domains: ["media.graphassets.com"],
     remotePatterns: [
       {
         protocol: "https",

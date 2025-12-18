@@ -44,7 +44,8 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   return fetchHygraphQuery(query, 60 * 60 * 24);
 };
 
-export default async function Project({ params: { slug } }: ProjectProps) {
+export default async function Project({ params }: ProjectProps) {
+  const { slug } = await params;
   const { project } = await getProjectDetails(slug);
 
   return (
@@ -70,8 +71,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: ProjectProps): Promise<Metadata> {
+  const { slug } = params;
   const data = await getProjectDetails(slug);
   const project = data.project;
 
