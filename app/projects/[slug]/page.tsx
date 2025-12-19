@@ -7,12 +7,6 @@ import type {
 } from "@/app/types/page-info";
 import { Metadata } from "next";
 
-type ProjectProps = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
-
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
   query ProjectQuery {
@@ -44,7 +38,11 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   return fetchHygraphQuery(query);
 };
 
-export default async function Project({ params }: ProjectProps) {
+export default async function Project({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const { project } = await getProjectDetails(slug);
 
@@ -56,10 +54,10 @@ export default async function Project({ params }: ProjectProps) {
   );
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const query = `
     query ProjectSlugQuery {
-      projects(first: 100){
+      projects(first: 100) {
         slug
       }
     }
@@ -67,12 +65,16 @@ export async function generateStaticParams() {
 
   const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query);
 
-  return projects;
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
 export async function generateMetadata({
   params,
-}: ProjectProps): Promise<Metadata> {
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const data = await getProjectDetails(slug);
   const project = data.project;
