@@ -7,7 +7,7 @@ import { RichText } from "@/app/components/rich-text";
 import { differenceInMonths, differenceInYears, format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { motion } from "framer-motion";
-import { techBadgeAnimation } from "@/app/lib/animations";
+import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
 
 type ExperienceItemProps = {
   experience: WorkExperience;
@@ -40,9 +40,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
   return (
     <motion.div
       className="grid grid-cols-[40px,1fr] md:gap-10 gap-4"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 50 }}
+      {...fadeUpAnimation}
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col items-center gap-4">
