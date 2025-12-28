@@ -7,6 +7,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { HomePageInfo } from "../../../../types/page-info";
 import { RichText } from "@/app/components/rich-text";
 import { CMSIcon } from "@/app/components/cms-icon";
+import { motion } from "framer-motion";
 
 type HomeSectionProps = {
   homeInfo: HomePageInfo;
@@ -22,7 +23,13 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
   return (
     <section className="w-full min-h-screen lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex items-center pt-16 lg:pt-24">
       <div className="container flex flex-col-reverse lg:flex-row items-center lg:items-start gap-8 lg:gap-0 px-4 sm:px-6">
-        <div className="w-full lg:max-w-[570px] text-center lg:text-left">
+        <motion.div
+          className="w-full lg:max-w-[570px] text-center lg:text-left"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="font-mono text-blue-300 text-sm lg:text-base">
             Olá, me chamo
           </p>
@@ -35,8 +42,15 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
           </div>
 
           <div className="flex justify-center lg:justify-start gap-2 flex-wrap">
-            {homeInfo.technologies.map((tech) => (
-              <TechBadge key={tech.name} name={tech.name} />
+            {homeInfo.technologies.map((tech, index) => (
+              <TechBadge
+                key={`intro-tech${tech.name}`}
+                name={tech.name}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              />
             ))}
           </div>
 
@@ -62,9 +76,15 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex lg:ml-20 justify-center lg:justify-end w-full lg:w-auto">
+        <motion.div
+          className="flex lg:ml-20 justify-center lg:justify-end w-full lg:w-auto"
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 100, scale: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
           <Image
             width={420}
             height={404}
@@ -74,7 +94,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
             priority
             unoptimized
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
