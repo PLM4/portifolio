@@ -1,6 +1,9 @@
+"use client";
+
 import { Link } from "@/app/components/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { SectionTitle } from "../../../section-title";
+import { motion } from "framer-motion";
 
 export const PageIntroduction = () => {
   return (
@@ -10,7 +13,13 @@ export const PageIntroduction = () => {
         subtitle="projetos"
         className="text-center items-center [&>h3]:text-4xl"
       />
-      <div className="flex flex-col items-center">
+      <motion.div
+        className="flex flex-col items-center"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.6 }}
+      >
         <p className="text-gray-300 text-center max-w-[640px] my-6 text:sm sm:text-base">
           Aqui estão alguns dos meus projetos mais recentes, que demonstram
           minhas habilidades e experiência em desenvolvimento web. Cada projeto
@@ -21,7 +30,7 @@ export const PageIntroduction = () => {
           <HiArrowNarrowLeft size={18} />
           Voltar para a home
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };
